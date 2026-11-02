@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pipe for Excel</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&display=swap">
+<style>
+:root{--bg:#f3f7fa;--fg:#14232d;--muted:#5d6c7b;--brand:#297aa0;--ink:#1f5469;--gold:#eeb80b;--line:#dbe4ec}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.6 'Segoe UI',system-ui,sans-serif}
+header{background:var(--ink);color:#fff;padding:40px max(20px,env(safe-area-inset-left))}
+header div,main{max-width:760px;margin:0 auto}
+h1,h2{font-family:Montserrat,system-ui,sans-serif;margin:0}
+h1{font-size:30px;display:flex;align-items:center;gap:12px}
+header p{opacity:.85;margin:8px 0 0}
+main{padding:28px max(20px,env(safe-area-inset-left)) 60px;display:flex;flex-direction:column;gap:24px}
+section{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px 22px}
+h2{font-size:17px;margin-bottom:10px;color:var(--ink)}
+ol{margin:0;padding-left:20px}
+li{margin:4px 0}
+code{background:#eef3f7;padding:1px 5px;border-radius:4px;font-size:13px}
+a.btn{display:inline-block;background:var(--brand);color:#fff;text-decoration:none;font-family:Montserrat,sans-serif;font-weight:700;font-size:13px;padding:9px 16px;border-radius:8px;margin-right:8px}
+a.btn.alt{background:#fff;color:var(--ink);border:1px solid var(--line)}
+.muted{color:var(--muted)}
+table{border-collapse:collapse;width:100%;font-size:14px}
+td{padding:6px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+td:first-child{font-family:Consolas,monospace;font-weight:700;color:var(--ink);white-space:nowrap}
+</style>
+</head>
+<body>
+<header><div>
+  <h1><img src="assets/icon-64.png" width="40" height="40" alt="">Pipe for Excel</h1>
+  <p>Demo add-in that writes audit working papers into your workbook: materiality, risk, journals, sampling, detail testing and misstatements. All AI output is simulated.</p>
+</div></header>
+<main>
+  <section>
+    <h2>Install in Excel on the web</h2>
+    <ol>
+      <li>Download <a href="manifest.xml" download>manifest.xml</a>.</li>
+      <li>Open a blank workbook at <code>excel.office.com</code>.</li>
+      <li>Go to <b>Home › Add-ins › More add-ins › My add-ins › Upload my add-in</b> and choose the manifest.</li>
+      <li>Click <b>Open Pipe</b> on the Home tab.</li>
+    </ol>
+    <p style="margin-top:14px"><a class="btn" href="manifest.xml" download>Download manifest</a><a class="btn alt" href="taskpane.html">Try the browser preview</a></p>
+    <p class="muted">The browser preview runs the same pane with a simulated workbook beside it.</p>
+  </section>
+  <section>
+    <h2>What it writes</h2>
+    <table>
+      <tr><td>Index</td><td>Engagement settings and the working-paper register. Every header links here.</td></tr>
+      <tr><td>A1</td><td>Materiality from the TB with SUMIFS, basis selection, PM and clearly trivial as formulas.</td></tr>
+      <tr><td>A2</td><td>Revenue analytics and a risk register. Ratings are formulas on likelihood and magnitude.</td></tr>
+      <tr><td>A3</td><td>Manual journals scored against six criteria, five of them formulas.</td></tr>
+      <tr><td>B1</td><td>Account mapping, sampling plan checked against firm minimums, and the selected items.</td></tr>
+      <tr><td>D3.1–J1.1</td><td>One tests-of-detail paper per area with results, known and projected misstatement.</td></tr>
+      <tr><td>S1</td><td>Summary of misstatements linked to each paper and compared with materiality.</td></tr>
+    </table>
+  </section>
+  <section>
+    <h2>Using it</h2>
+    <ol>
+      <li>Set up the engagement and click <b>Create sample GL &amp; TB</b>.</li>
+      <li><b>Audit</b> runs the three workflows in order with a plan to approve and a sign-off for each.</li>
+      <li><b>Processes</b> runs any single paper. Pipe checks the workbook for what it needs and asks for the rest.</li>
+      <li>Shaded cells are judgements. Change them and the papers recalculate.</li>
+    </ol>
+  </section>
+</main>
+</body>
+</html>
